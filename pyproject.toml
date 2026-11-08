@@ -1,0 +1,59 @@
+[build-system]
+requires = [
+    "scikit-build-core >=0.4.3",
+    "nanobind >=2.0,<2.10 ; python_version < '3.9'",
+    "nanobind >=2.0 ; python_version >= '3.9'",
+    "typing_extensions ; python_version < '3.11'",
+]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "event-lidar"
+version = "0.1.9"
+description = "Converts LiDAR point clouds into events."
+license = { file = "LICENSE" }
+readme = "docs/README.md"
+requires-python = ">=3.8"
+authors = [
+    { name = "Masatoshi Murakami" },
+]
+classifiers = [
+    "License :: OSI Approved :: BSD License",
+]
+
+dependencies = [
+    "numpy>=1.22",
+]
+
+[project.urls]
+Homepage = "https://event-lidar-project.github.io/event-lidar/"
+
+[tool.scikit-build]
+# Protect the configuration against future changes in scikit-build-core
+minimum-version = "0.4"
+
+# Setuptools-style build caching in a local directory
+build-dir = "build/{wheel_tag}"
+
+# Build stable ABI wheels for CPython 3.12+
+wheel.py-api = "cp312"
+
+# Eigen headers are needed when building from source, so retain them in the source distribution.
+sdist.include = [
+    "LICENSE",
+    "third_party/eigen-5.0.1",
+    "third_party/licenses",
+    "THIRD_PARTY_NOTICES.md",
+]
+
+# Keep project and third-party licenses and Eigen's source-availability notice with binary wheels.
+wheel.license-files = [
+    "LICENSE",
+    "third_party/eigen-5.0.1/COPYING.*",
+    "third_party/licenses/LICENSE.*",
+    "THIRD_PARTY_NOTICES.md",
+]
+
+[tool.cibuildwheel]
+# Show compiler output during wheel builds.
+build-verbosity = 1

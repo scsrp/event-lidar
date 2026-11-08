@@ -1,0 +1,56 @@
+root = true
+
+# C++, C, CUDA, Python, Cython, Go, Haskell, Rust, asm, batch
+[*.{cpp,hpp,c,h,cu,cuh,py,pyx,go,hs,rs,s,bat}]
+indent_size              = 4
+indent_style             = space
+charset                  = utf-8-bom
+end_of_line              = crlf
+insert_final_newline     = true
+trim_trailing_whitespace = true
+
+# Shell Script
+[*.{sh}]
+indent_size              = 4
+indent_style             = space
+charset                  = utf-8-bom
+end_of_line              = lf
+insert_final_newline     = true
+trim_trailing_whitespace = true
+
+# NOTE: In Markdown, two trailing spaces create a line break, so preserve trailing spaces in README files.
+# README
+[*.{md}]
+indent_size              = 4
+indent_style             = space
+charset                  = utf-8-bom
+end_of_line              = crlf
+insert_final_newline     = true
+trim_trailing_whitespace = false
+
+# NOTE: Whitespace indentation is not permitted in Makefiles.
+# Makefile
+[Makefile]
+indent_size              = 4
+indent_style             = tab
+charset                  = utf-8-bom
+end_of_line              = crlf
+insert_final_newline     = true
+trim_trailing_whitespace = true
+
+# CMake
+[CMakeLists.txt]
+indent_size              = 4
+indent_style             = space
+charset                  = utf-8-bom
+end_of_line              = crlf
+insert_final_newline     = true
+trim_trailing_whitespace = true
+
+# reStructuredText 
+[*.{rst}]
+indent_size              = 3
+indent_style             = space
+charset                  = utf-8
+insert_final_newline     = true
+trim_trailing_whitespace = true

@@ -1,0 +1,24 @@
+# Python environments and caches
+.venv*/
+venv*/
+__pycache__/
+
+# Build outputs
+[Bb]uild*/
+dist/
+*.exe
+*.obj
+*.pyd
+
+# Local data and workspaces
+/data/
+/workspace/
+
+# Editor and OS files
+.vs/
+.vscode/
+.DS_Store
+
+# Runtime outputs
+*.log
+core

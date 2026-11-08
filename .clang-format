@@ -1,0 +1,443 @@
+
+# ************************************************** #
+#                       Common                       #
+# ************************************************** #
+
+---
+
+# --- file extension
+
+RawStringFormats:
+    - Language: Proto
+      Delimiters:
+          - proto
+    - Language: Cpp
+      Delimiters:
+          - hpp
+          - cpp
+          
+# ************************************************** #
+#                         C++                        #
+# ************************************************** #
+
+---
+
+Language: Cpp
+
+# BasedOnStyle: Google
+
+# --- AccessModifier
+
+AccessModifierOffset          : -4
+
+# ==============================
+#          Align
+# ==============================
+
+# --- argument, parameter, etc...
+
+AlignAfterOpenBracket         : AlwaysBreak
+
+# --- array
+
+AlignArrayOfStructures        : Right
+
+# --- Consecutive
+
+AlignConsecutiveAssignments:
+    Enabled                   : true
+    AcrossEmptyLines          : true
+    AcrossComments            : true
+    AlignCompound             : true
+    PadOperators              : true
+
+AlignConsecutiveBitFields: None
+
+AlignConsecutiveDeclarations:
+    Enabled                   : true
+    AcrossEmptyLines          : true
+    AcrossComments            : true
+    # AlignFunctionDeclarations : true
+    AlignFunctionPointers     : false
+    
+AlignConsecutiveMacros:
+    Enabled                   : true
+    AcrossEmptyLines          : false
+    AcrossComments            : false
+
+AlignConsecutiveShortCaseStatements:
+    Enabled                   : true
+    AcrossEmptyLines          : true
+    AcrossComments            : true
+    AlignCaseColons           : true
+
+# --- Trailing, operand
+
+AlignEscapedNewlines: Right
+
+# see BreakBeforeBinaryOperators
+AlignOperands       : Align 
+
+AlignTrailingComments:
+    Kind           : Always
+    OverEmptyLines : 2
+
+# ==============================
+#            Allow
+# ==============================
+
+# --- Arg, Param, noexcept
+
+AllowAllArgumentsOnNextLine               : true
+AllowAllParametersOfDeclarationOnNextLine : true
+AllowBreakBeforeNoexceptSpecifier         : Never
+
+# --- Short on 1 Line
+
+AllowShortBlocksOnASingleLine              : false
+AllowShortCaseExpressionOnASingleLine      : true
+AllowShortCaseLabelsOnASingleLine          : true
+AllowShortCompoundRequirementOnASingleLine : true
+AllowShortEnumsOnASingleLine               : false
+AllowShortFunctionsOnASingleLine           : Inline    # class member only
+AllowShortIfStatementsOnASingleLine        : Never
+AllowShortLambdasOnASingleLine             : Inline    # argument only
+AllowShortLoopsOnASingleLine               : false
+
+# ==============================
+#            MISC
+# ==============================
+
+# --- break
+
+AlwaysBreakBeforeMultilineStrings : false
+
+# --- Arg, Param
+
+BinPackArguments                  : false
+BinPackParameters                 : true
+
+# --- bit field
+
+BitFieldColonSpacing              : None
+
+# --- Brace
+
+BreakBeforeBraces: Custom
+BraceWrapping:
+    AfterCaseLabel        : true
+    AfterClass            : false
+    AfterControlStatement : MultiLine
+    AfterEnum             : false
+    AfterFunction         : false
+    AfterNamespace        : false
+    AfterStruct           : false
+    AfterUnion            : false
+    AfterExternBlock      : false
+    BeforeCatch           : false
+    BeforeElse            : true
+    BeforeLambdaBody      : false
+    BeforeWhile           : false
+    IndentBraces          : false
+
+BracedInitializerIndentWidth : 4
+
+# --- break
+
+BreakAdjacentStringLiterals       : false
+BreakAfterAttributes              : Leave
+BreakAfterReturnType              : Automatic
+BreakBeforeBinaryOperators        : All
+BreakFunctionDefinitionParameters : false
+BreakTemplateDeclarations         : Yes
+
+# BreakBeforeBraces -> see BraceWrapping
+
+BreakBeforeConceptDeclarations    : true
+BreakBeforeInlineASMColon         : Always
+BreakBeforeTernaryOperators       : true
+BreakConstructorInitializers      : BeforeColon
+BreakInheritanceList              : BeforeColon
+BreakStringLiterals               : false
+
+# --- limit, pragma, namespace
+
+ColumnLimit : 128
+
+# CommentPragmas
+
+CompactNamespaces : false
+
+# --- indent
+
+ContinuationIndentWidth           : 4
+
+
+# --- Braced lists, line endings, and formatting control
+
+Cpp11BracedListStyle              : true
+
+DeriveLineEnding                  : false
+
+DisableFormat                     : false
+
+# --- AccessModifier
+
+EmptyLineAfterAccessModifier      : Never
+EmptyLineBeforeAccessModifier     : Always
+
+# --- namespace
+
+# see ShortNamespaceLines
+FixNamespaceComments              : true
+
+# --- macro
+
+# ForEachMacros
+# IfMacros 
+
+# --- include
+
+IncludeBlocks                     : Regroup
+
+IncludeCategories:
+    - Regex                       : '^<.*\.(hpp|h)>'
+      Priority                    : 1
+    - Regex                       : '^<[^.]*>'
+      Priority                    : 2
+    - Regex                       : '^".*.(hpp|h)"'
+      Priority                    : 3
+
+# --- indent
+
+IndentAccessModifiers      : false
+IndentCaseBlocks           : false
+IndentCaseLabels           : false
+IndentExternBlock          : AfterExternBlock
+IndentGotoLabels           : true
+IndentPPDirectives         : BeforeHash
+IndentRequiresClause       : true
+                           
+IndentWidth                : 4
+
+IndentWrappedFunctionNames : false
+
+# --- insert
+
+InsertBraces               : false
+InsertNewlineAtEOF         : true
+
+IntegerLiteralSeparator:
+    Binary : 8
+    Decimal: -1
+    Hex    : 4
+
+# --- empty line
+
+KeepEmptyLines:
+    AtEndOfFile   : true
+    AtStartOfBlock: false
+    AtStartOfFile : false
+
+# --- lambda, line ending
+
+LambdaBodyIndentation    : Signature
+
+LineEnding               : CRLF
+
+# MacroBlockBegin
+# MacroBlockEnd
+# Macros
+
+# --- max empty line
+
+MaxEmptyLinesToKeep      : 1
+
+# --- namespace
+
+NamespaceIndentation     : All
+# NamespaceMacros 
+
+
+# --- preprocessor, ctor
+
+# PPIndentWidth 
+
+PackConstructorInitializers: BinPack
+
+# --- Penalty
+
+PenaltyBreakAssignment               : 0
+PenaltyBreakBeforeFirstCallParameter : 0
+PenaltyBreakComment                  : 65535
+PenaltyBreakFirstLessLess            : 32
+PenaltyBreakOpenParenthesis          : 32
+PenaltyBreakScopeResolution          : 65535
+PenaltyBreakString                   : 65535
+PenaltyBreakTemplateDeclaration      : 32
+PenaltyExcessCharacter               : 32
+# PenaltyIndentedWhitespace            : 32
+PenaltyReturnTypeOnItsOwnLine        : 65535
+
+# --- pointer, qualifier
+
+PointerAlignment                     : Left
+QualifierAlignment                   : Leave
+ReferenceAlignment                   : Left
+
+# --- comment
+
+ReflowComments                       : false
+
+# --- require
+
+RequiresClausePosition               : OwnLine
+RequiresExpressionIndentation        : OuterScope
+
+# --- separate, skip macro, short
+
+SeparateDefinitionBlocks             : Leave
+
+ShortNamespaceLines                  : 10
+
+SkipMacroDefinitionBody              : false
+
+# --- sort
+
+SortIncludes                         : CaseInsensitive
+
+SortUsingDeclarations                : false
+
+# --- space
+
+SpaceAfterCStyleCast                 : false
+SpaceAfterLogicalNot                 : false
+SpaceAfterTemplateKeyword            : false
+SpaceAroundPointerQualifiers         : Default
+SpaceBeforeAssignmentOperators       : true
+SpaceBeforeCaseColon                 : false
+SpaceBeforeCpp11BracedList           : false
+SpaceBeforeInheritanceColon          : true
+SpaceBeforeParens                    : ControlStatements
+SpaceBeforeRangeBasedForLoopColon    : true
+SpaceBeforeSquareBrackets            : false
+SpaceInEmptyBlock                    : false
+
+SpacesBeforeTrailingComments         : 4
+SpacesInAngles                       : Never
+
+# SpacesInContainerLiterals            : 
+#     Minimum : 1
+#     Maximum : 1
+
+SpacesInParens                       : Never
+SpacesInSquareBrackets               : false
+
+# --- standard
+
+Standard                             : c++17
+
+# --- macro, tab, typename
+
+AttributeMacros:
+    - EL_NODISCARD
+# StatementAttributeLikeMacros:
+StatementMacros:
+    - UNREACHABLE
+
+#TabWidth
+
+#TypeNames 
+#TypenameMacros 
+
+# --- tab
+
+UseTab                               : Never
+
+# --- macro
+
+# WhitespaceSensitiveMacros
+
+# ************************************************** #
+#                         Proto                      #
+# ************************************************** #
+
+---
+
+Language: Proto
+
+# ==============================
+#            Align
+# ==============================
+
+AlignConsecutiveAssignments:
+    Enabled                   : true
+    AcrossEmptyLines          : true
+    AcrossComments            : true
+    AlignCompound             : true
+    PadOperators              : true
+
+AlignConsecutiveDeclarations:
+    Enabled                   : true
+    AcrossEmptyLines          : true
+    AcrossComments            : true
+    # AlignFunctionDeclarations : true
+    AlignFunctionPointers     : false
+
+AlignTrailingComments:
+    Kind           : Always
+    OverEmptyLines : 2
+
+# ==============================
+#            MISC
+# ==============================
+
+# --- Short on 1 Line
+
+AllowShortFunctionsOnASingleLine : Inline
+
+# --- limit
+
+ColumnLimit : 128
+
+# --- indent
+
+ContinuationIndentWidth    : 4
+IndentWidth                : 4
+
+# --- insert
+
+InsertNewlineAtEOF         : true
+
+# --- empty line
+
+KeepEmptyLines:
+    AtEndOfFile   : true
+    AtStartOfBlock: false
+    AtStartOfFile : false
+
+# --- line ending
+
+LambdaBodyIndentation    : Signature
+
+LineEnding               : CRLF
+
+# --- max empty line
+
+MaxEmptyLinesToKeep      : 1
+
+# --- comment
+
+ReflowComments                       : false
+
+# --- space
+
+SpaceBeforeAssignmentOperators       : true
+
+SpacesBeforeTrailingComments         : 4
+
+SpacesInParens                       : Never
+
+# --- tab
+
+UseTab                               : Never

@@ -1,0 +1,4 @@
+--find-links https://storage.googleapis.com/jax-releases/jax_releases.html
+
+rerun-sdk==0.21.0
+waymo-open-dataset-tf-2-12-0==1.6.7

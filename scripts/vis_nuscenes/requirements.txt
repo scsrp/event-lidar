@@ -1,0 +1,5 @@
+nuscenes-devkit==1.2.0
+rerun-sdk==0.23.1
+# nuScenes requires NumPy 1.x; PyArrow 26 requires NumPy 2.
+pyarrow<26
+matplotlib>=3.6
